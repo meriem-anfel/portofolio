@@ -1,4 +1,4 @@
-// ProjectShowcase.jsx
+
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import styles from "./ProjectShowcase.module.css";
@@ -110,6 +110,7 @@ export default function ProjectShowcase() {
         description: "Task management application with Kanban.",
         tech: ["React", "Vite", "CSS"],
         github: "https://github.com/meriem-anfel/lab7Kanban-board",
+        demo: "https://chipper-macaron-1bf678.netlify.app"
       },
     ];
 

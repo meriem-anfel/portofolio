@@ -1,0 +1,216 @@
+:root {
+  --bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  --text-main: hsl(210, 40%, 98%);
+  --text-muted: #b7bbc1;
+  --accent-gold: #e6c77a;
+  --accent-rose: #dc9191;
+}
+
+.home {
+  margin-top: 40px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 30px;
+  background: var(--bg-gradient);
+  color: var(--text-main);
+}
+
+
+.avatar {
+  width: 250px;
+  height: 380px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+
+.content {
+  max-width: 450px;
+  text-align: left;
+}
+
+.name {
+  font-family: "Playfair Display", serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-rose));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-bottom: 8px;
+}
+
+.home h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.home p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 300;
+  color: silver;
+  margin-bottom: 30px;
+}
+
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.button {
+  padding: 10px 24px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-rose));
+  color: #1a1a2e;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(230, 199, 122, 0.35);
+}
+
+.buttonOutline {
+  padding: 10px 24px;
+  border: 2px solid var(--accent-gold);
+  background: transparent;
+  color: var(--accent-gold);
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.buttonOutline:hover {
+  background: var(--accent-gold);
+  color: #1a1a2e;
+  transform: translateY(-2px);
+}
+
+
+.socials {
+  margin-top: 20px;
+  display: flex;
+  gap: 18px;
+}
+
+.socials a {
+  font-size: 2rem;
+  color: var(--accent-gold);
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  color: var(--accent-rose);
+  filter: drop-shadow(0 5px 15px rgba(220, 145, 145, 0.6));
+}
+
+/* 
+   RESPONSIVE
+*/
+
+
+@media (max-width: 1024px) {
+  .home {
+    gap: 40px;
+  }
+
+  .avatar {
+    width: 220px;
+    height: 330px;
+  }
+
+  .name {
+    font-size: 2.3rem;
+  }
+
+  .home h2 {
+    font-size: 1.3rem;
+  }
+
+  .home p {
+    font-size: 1.05rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .avatar {
+    width: 180px;
+    height: 260px;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 2rem;
+  }
+
+  .home h2 {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .home p {
+    font-size: 0.95rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .button,
+  .buttonOutline {
+    width: 100%;
+    text-align: center;
+  }
+
+  .socials a {
+    font-size: 1.8rem;
+  }
+}
+
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}

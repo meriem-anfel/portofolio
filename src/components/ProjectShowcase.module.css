@@ -1,0 +1,172 @@
+:root {
+  --accent-gold: #e6c77a;
+  --accent-rose: #dc9191;
+}
+
+
+.projects {
+  padding: 5rem 2rem;
+  background: #f4f4f4;
+  color: #000;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-rose));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+
+.card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 18px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid transparent;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+  transition: all 0.35s ease;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-rose));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #000;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech span {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-rose));
+  border: 1px solid var(--accent-rose);
+  transition: all 0.3s ease;
+}
+
+.tech span:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(220,145,145,0.7);
+}
+
+
+.links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: var(--accent-gold);
+  background: linear-gradient(
+    90deg,
+    rgba(230, 199, 122, 0.2),
+    rgba(220, 145, 145, 0.2)
+  );
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-rose));
+  color: #020617;
+  box-shadow: 0 6px 18px rgba(220, 145, 145, 0.6);
+  transform: translateY(-2px);
+}
+
+.link svg {
+  font-size: 1rem;
+  margin-right: 6px;
+}
+
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  background: linear-gradient(120deg, var(--accent-gold), var(--accent-rose), var(--accent-gold));
+  background-size: 300% 300%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(230,199,122,0.5), 0 0 45px rgba(220,145,145,0.7);
+}
+
+.card:hover::before {
+  opacity: 1;
+  animation: borderFlow 2.5s linear infinite;
+}
+
+.card:hover::after {
+  left: 120%;
+}
+
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 500px) {
+  .card h3 { font-size: 1.15rem; }
+  .card p { font-size: 0.8rem; }
+  .tech span { font-size: 0.75rem; padding: 3px 8px; }
+}

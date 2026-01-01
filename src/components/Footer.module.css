@@ -1,0 +1,128 @@
+.footer {
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-rose));
+  color: #eee;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 -8px 30px rgba(0,0,0,0.6);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, #e6c77a, #dc9191, #e6c77a);
+  animation: rotateGradient 6s linear infinite;
+  z-index: 0;
+  filter: blur(80px);
+}
+
+@keyframes rotateGradient {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1; 
+}
+
+
+.emailBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.iconLink {
+  color: #fff;
+  font-size: 2rem;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.iconLink:hover {
+  color: var(--accent-gold);
+  transform: scale(1.3) rotate(15deg);
+  text-shadow: 0 0 12px var(--accent-rose), 0 0 25px var(--accent-gold);
+}
+
+
+.emailText {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #f8f8f8;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.emailBox:hover .emailText {
+  color: var(--accent-rose);
+  text-shadow: 0 0 5px var(--accent-gold);
+}
+
+
+.text {
+  font-size: 0.8rem;
+  color: #f0f0f0;
+  z-index: 1;
+  position: relative;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.2rem 0.8rem;
+  }
+
+  .iconLink {
+    font-size: 1.8rem;
+  }
+
+  .emailText {
+    font-size: 0.85rem;
+  }
+
+  .text {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .socials {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .emailBox {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .iconLink {
+    font-size: 1.6rem;
+  }
+
+  .emailText {
+    font-size: 0.8rem;
+  }
+
+  .text {
+    font-size: 0.7rem;
+  }
+}

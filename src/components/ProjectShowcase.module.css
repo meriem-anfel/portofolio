@@ -133,17 +133,7 @@
   transition: opacity 0.4s ease;
 }
 
-.card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -60%;
-  width: 40%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
-  transform: skewX(-20deg);
-  transition: left 0.7s ease;
-}
+
 
 .card:hover {
   transform: translateY(-10px);
@@ -155,9 +145,7 @@
   animation: borderFlow 2.5s linear infinite;
 }
 
-.card:hover::after {
-  left: 120%;
-}
+
 
 @keyframes borderFlow {
   0% { background-position: 0% 50%; }
